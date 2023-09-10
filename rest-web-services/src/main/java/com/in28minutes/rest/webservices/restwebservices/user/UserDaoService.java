@@ -12,10 +12,12 @@ public class UserDaoService {
 	
 	private static List<User> userList = new ArrayList<>();
 	
+	private static int userCount = 0;
+	
 	static {
-		userList.add(new User(1, "Adam", LocalDate.now().minusYears(30)));
-		userList.add(new User(2, "Eve", LocalDate.now().minusYears(25)));
-		userList.add(new User(3, "Jim", LocalDate.now().minusYears(10)));
+		userList.add(new User(++ userCount, "Adam", LocalDate.now().minusYears(30)));
+		userList.add(new User(++ userCount, "Eve", LocalDate.now().minusYears(25)));
+		userList.add(new User(++ userCount, "Jim", LocalDate.now().minusYears(10)));
 	}
 	
 	
@@ -31,6 +33,12 @@ public class UserDaoService {
 			if (user.getId().equals(id)) return user;
 		}
 		return null;
+	}
+	
+	public User save(User user) {
+		user.setId(++ userCount);
+		userList.add(user);
+		return user;
 	}
 	
 	

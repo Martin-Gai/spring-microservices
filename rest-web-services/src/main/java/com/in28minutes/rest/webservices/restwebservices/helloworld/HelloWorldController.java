@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 	// methods within a @RestController class typically return "data" DIRECTLY, not view names
 	// the data returned is typically serialized into formats like JSON and XML
 		// If check the @RestController Interface, there's actually a @ResponseBody in it!!!! That's why it won't be a view name by default
+		// Therefore in this case @RestController == @Controller + @ResponseBody, we get the same result... But still do not confuse these 2 annotation
 
 @RestController
 public class HelloWorldController {
