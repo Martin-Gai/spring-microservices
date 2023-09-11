@@ -1,10 +1,17 @@
 package com.in28minutes.rest.webservices.restwebservices.user;
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 public class User {
 	
 	private Integer id;
+	
+	@Size(min = 2, message = "name should have at least 2 chars")
 	private String name;
+	
+	@Past(message = "birthDate should be in the past")
 	private LocalDate birthDate;
 	
 	

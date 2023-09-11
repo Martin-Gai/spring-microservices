@@ -2,6 +2,7 @@ package com.in28minutes.rest.webservices.restwebservices.exceptions;
 
 import java.time.LocalDateTime;
 
+// whenever an exception happens, we want to follow this structure
 public class ErrorDetails {
 	private LocalDateTime timestamp;
 	private String message;
